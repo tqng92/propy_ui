@@ -1,0 +1,183 @@
+/* General Body & App Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 600px;
+    height: 80vh;
+    max-height: 700px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* View Management */
+.view {
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+.view.active {
+    display: flex;
+}
+
+/* Home View Styling */
+#home-view {
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #007aff;
+    margin-bottom: 1.5rem;
+}
+
+/* Shared Search Form Styling */
+.search-form {
+    display: flex;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.search-form input {
+    flex-grow: 1;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    outline: none;
+}
+.search-form button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Chat View Styling */
+#chat-view {
+    justify-content: space-between;
+}
+
+#chat-header {
+    padding: 1rem 1.5rem 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Message Bubble Styling */
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    max-width: 75%;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #007aff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+    background-color: #eef1f4;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+#initial-query {
+    /* Already has user-message styles, no extra styling needed */
+    margin: 0;
+}
+
+#chat-view .search-form {
+    padding: 0.5rem;
+    border-radius: 0;
+    border-top: 1px solid #e0e0e0;
+}
+#chat-view .search-form input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+/* Loading Indicator */
+#loading-indicator {
+    align-self: flex-start;
+    margin: 0 1.5rem 0.75rem;
+}
+#loading-indicator span {
+    animation: blink 1.4s infinite both;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#loading-indicator span:nth-child(2) { animation-delay: 0.2s; }
+#loading-indicator span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink {
+    0%, 80%, 100% { opacity: 0; }
+    40% { opacity: 1; }
+}
+
+/* Listing View Styling */
+.listing-header {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+}
+.listing-header h2 {
+    margin: 0 0 0.5rem 0;
+}
+#search-summary {
+    color: #555;
+    background-color: #eef1f4;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.listing-placeholder {
+    padding: 1.5rem;
+    text-align: center;
+}
+.placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.placeholder-item {
+    height: 100px;
+    background-color: #eef1f4;
+    border-radius: 8px;
+}
