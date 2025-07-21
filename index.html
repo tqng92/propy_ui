@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversational Search Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <!-- View 1: Home Page (Search Bar Only) -->
+        <div id="home-view" class="view active">
+            <h1 class="logo">PropertyFinder AI</h1>
+            <form id="home-search-form" class="search-form">
+                <input type="text" id="home-search-input" placeholder="Ask me about properties or just say hi..." autocomplete="off" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- View 2: Chat Page -->
+        <div id="chat-view" class="view">
+            <div id="chat-header">
+                <div id="initial-query" class="message user-message"></div>
+            </div>
+            <div id="chat-history">
+                <!-- Chat messages will be dynamically inserted here -->
+            </div>
+            <div id="loading-indicator" class="message bot-message" style="display: none;">
+                <span>.</span><span>.</span><span>.</span>
+            </div>
+            <form id="chat-form" class="search-form">
+                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <!-- View 3: Listings Page -->
+        <div id="listing-view" class="view">
+            <div class="listing-header">
+                <h2>Search Results</h2>
+                <div id="search-summary">
+                    <!-- Final search query will be inserted here -->
+                </div>
+            </div>
+            <div class="listing-placeholder">
+                <h3>Property Listings</h3>
+                <p>Showing placeholder listings based on your search.</p>
+                <div class="placeholder-grid">
+                    <div class="placeholder-item"></div>
+                    <div class="placeholder-item"></div>
+                    <div class="placeholder-item"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
