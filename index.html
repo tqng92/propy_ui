@@ -27,9 +27,12 @@
             <div id="chat-history">
                 <!-- Chat messages will be dynamically inserted here -->
             </div>
-            <div id="loading-indicator" class="message bot-message" style="display: none;">
-                <span>.</span><span>.</span><span>.</span>
+      
+            <div id="loading-indicator" class="message bot-message pulsing-dots" style="display: none;">
+                <span></span><span></span><span></span>
             </div>
+
+
             <form id="chat-form" class="search-form">
                 <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" required>
                 <button type="submit">Send</button>
